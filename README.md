@@ -9,6 +9,7 @@
 ### Prerequisites
 
 **1.** Install [Docker](https://docs.docker.com/install/)
+
 **2.** Development datasets of DIHARD 2018
 
 ### Steps to reproduce
@@ -23,7 +24,7 @@
         docker build -t dihard2019-baseline .
 
 * Open a `bash` session in the docker container, provides the path to
-  the developemnt datasets here:
+  the development datasets here:
 
         docker run --rm -it -v </abs/path/to/dihard2018-datasets-dev>:/data dihard2019-baseline bash
 
