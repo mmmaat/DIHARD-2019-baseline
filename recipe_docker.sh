@@ -26,7 +26,7 @@ nnet_dir=exp/xvector_nnet_1a
 ## stage 1
 
 # Make MFCCs for each dataset.
-for name in train dihard_2018_dev; do
+for name in dihard_2018_dev; do
     steps/make_mfcc.sh \
         --write-utt2num-frames true --mfcc-config conf/mfcc.conf \
         --nj 40 --cmd "$train_cmd --max-jobs-run 20" \
