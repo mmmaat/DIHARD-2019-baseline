@@ -23,7 +23,7 @@ mfccdir=`pwd`/mfcc
 vaddir=`pwd`/mfcc
 nnet_dir=exp/xvector_nnet_1a
 
-## stage 1
+## stage 0
 
 # Make MFCCs for each dataset.
 for name in dihard_2018_dev; do
@@ -59,7 +59,7 @@ cd $KALDI/egs/dihard_2018/v2
 mkdir -p $nnet_dir
 cp $BASELINE/{final.raw, max_chunk_size, min_chunk_size,extract.config} $nnet_dir
 
-## stage 9
+## stage 1
 
 # Extract x-vectors for DIHARD 2018 development and evaluation set.
 diarization/nnet3/xvector/extract_xvectors.sh \
@@ -71,7 +71,7 @@ diarization/nnet3/xvector/extract_xvectors.sh \
 
 cp $BASELINE/plda $KALDI/egs/dihard_2018/v2/exp/xvector_nnet_1a/xvectors_dihard_2018_dev
 
-## stage 11
+## stage 2
 
 # Perform PLDA scoring on all pairs of segments for each recording.
 diarization/nnet3/xvector/score_plda.sh \
@@ -79,7 +79,7 @@ diarization/nnet3/xvector/score_plda.sh \
     --nj 20 $nnet_dir/xvectors_dihard_2018_dev $nnet_dir/xvectors_dihard_2018_dev \
     $nnet_dir/xvectors_dihard_2018_dev/plda_scores
 
-## stage 12
+## stage 3
 
 # First, we find the threshold that minimizes the DER on DIHARD 2018 development set.
 mkdir -p $nnet_dir/tuning

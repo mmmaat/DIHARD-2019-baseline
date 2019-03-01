@@ -41,7 +41,7 @@
 ### Steps to reproduce v2
 **1.** Traverse to the directory of choice (called \<k\> here after) and clone the Kaldi repository using the following command
 ```
-git clone https://github.com/kaldi-asr/kaldi.git 
+git clone https://github.com/kaldi-asr/kaldi.git
 ```
 **2.** Copy the run_notrain.sh file into the ```/<k>/kaldi-master/egs/dihard_2018/v2``` directory
 ```
@@ -52,22 +52,22 @@ cp /<mod>/run_notrain.sh /<k>/kaldi-master/egs/dihard_2018/v2
 ```
 local/make_dihard_2018_dev.sh <path of development data of DIHARD> data/dihard_2018_dev
 ```
-       
+
 **4.** Run stage 0 of run_notrain.sh. This stage creates MFCCs and cepstral mean normalized MFCCs and saves them separately on disk.
 ```
 bash run_notrain.sh 0
 ```
-  
-**5.** Change directory to ```/<k>/kaldi-master/egs/dihard_2018/v2``` . Create a directory called exp/xvector_nnet_1a   
-``` 
+
+**5.** Change directory to ```/<k>/kaldi-master/egs/dihard_2018/v2``` . Create a directory called exp/xvector_nnet_1a
+```
 mkdir -p exp/xvector_nnet_1a
 ```
-       
+
 **6.** Select a directory to clone this repository (say \<mod\>) and execute the following command.
 ```
 git clone https://github.com/iiscleap/DIHARD-2019-baseline.git
 ```
-       
+
 **7.** Copy the final.raw, max_chunk_size, min_chunk_size and extract.config files in <mod> to the created directory in step 5.
  ```
  cp /<mod>/{final.raw, max_chunk_size, min_chunk_size,extract.config} /<k>/kaldi-master/egs/dihard_2018/v2/exp/xvector_nnet_1a
@@ -78,7 +78,7 @@ git clone https://github.com/iiscleap/DIHARD-2019-baseline.git
 bash run_notrain.sh 1
 ```
 
-**9.** Copy the trained PLDA model given in this repository as shown below. Now score the x-vectors obtained from the previous step (step 8), by executing stage 2 of run_notrain.sh. 
+**9.** Copy the trained PLDA model given in this repository as shown below. Now score the x-vectors obtained from the previous step (step 8), by executing stage 2 of run_notrain.sh.
 ```
 cp /<mod>/plda /<k>/kaldi-master/egs/dihard_2018/v2/exp/xvector_nnet_1a/xvectors_dihard_2018_dev/
 bash run_notrain.sh 2
