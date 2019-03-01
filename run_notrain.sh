@@ -17,6 +17,7 @@ stage=$1
 set -e
 mfccdir=`pwd`/mfcc
 vaddir=`pwd`/mfcc
+nnet_dir=exp/xvector_nnet_1a
 
 
 if [ $stage -eq 0 ]; then

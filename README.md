@@ -33,8 +33,12 @@
         ./recipe_docker.sh
 
 
+## Reproduce in your own system
+
 ### Prerequisites
-**1.** Kaldi\
+
+**1.** Kaldi
+
 **2.** Development datasets of DIHARD 2018
 
 
